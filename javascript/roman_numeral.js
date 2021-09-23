@@ -5,7 +5,7 @@ const romanNumeral = (string) => {
   return numerals.reduce((p, c, i, arr) => {
     const curVal = numeralMap[c.toUpperCase()]
     if (i === 0) return curVal 
-    const preVal = numeralMap[arr[i - 1]]
+    const preVal = numeralMap[arr[i - 1]] // get previous numeral's value
     const tempVal = preVal >= curVal ? p + curVal : (p - preVal) + (curVal - preVal)
     return tempVal 
   }, 0)
